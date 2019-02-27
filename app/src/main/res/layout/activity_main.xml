@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+
+    <EditText
+        android:id="@+id/etBevName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="NAME"/>
+
+    <EditText
+        android:id="@+id/etServingSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Size"/>
+
+    <EditText
+        android:id="@+id/etRating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Rating"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/chkIsCaffinated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Caffinated"/>
+
+        <CheckBox
+            android:id="@+id/chkIsAlcoholic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "Alcoholic"/>
+
+        <CheckBox
+            android:id="@+id/chkIsCarbonated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Carbonated"/>
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"/>
+
+
+    <Button
+        android:id="@+id/btnSendToRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SUBMIT"
+        android:onClick="onClick"/>
+
+
+</LinearLayout>
