@@ -3,6 +3,8 @@ package examples.aaronhoskins.com.recyclerview;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -29,7 +31,8 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
         lstPassedBevageNames = findViewById(R.id.lstSimpleListView);
         ArrayAdapter<String> arrayAdapter
-                = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, savedList);
+                = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, savedList);
+
 
         if(getIntent() != null) {
             passedIntent = getIntent();

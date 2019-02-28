@@ -8,13 +8,16 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
 public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder> {
+    private static final String IMAGE_URL = "";
     //List of beverages that will be populated into the recycler view
     ArrayList<Beverages> beveragesArrayList;
 
@@ -45,6 +48,14 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         viewHolder.tvServingSize.setText(currentBeverageBeingPopulated.getServingSize());
         viewHolder.tvAdditionalInfo.setText(additionalInfo(currentBeverageBeingPopulated));
         viewHolder.rtBevRating.setRating(currentBeverageBeingPopulated.getRating());
+
+        //Using glide to associate the web resourced image to our imageView
+        Glide
+                .with(viewHolder.itemView.getContext())
+                .load("https://images.freeimages.com/images/large-previews/25d/eagle-1523807.jpg")
+                .into(viewHolder.imgMeme);
+
+
         Log.d("TAG", "onBindViewHolder: item being rendered = " + position);
 
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -92,6 +103,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         TextView tvBevName;
         TextView tvServingSize;
         TextView tvAdditionalInfo;
+        ImageView imgMeme;
         RatingBar rtBevRating;
 
         public ViewHolder(@NonNull View itemView) {
@@ -100,6 +112,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
             tvBevName = itemView.findViewById(R.id.tvBevName);
             tvServingSize = itemView.findViewById(R.id.tvServingSize);
             rtBevRating = itemView.findViewById(R.id.rtRating);
+            imgMeme = itemView.findViewById(R.id.imgMemeImage);
         }
     }
 }
